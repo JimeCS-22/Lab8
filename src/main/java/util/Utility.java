@@ -173,6 +173,33 @@ public class Utility {
         return mayor;
     }
 
+    public static int[] getIntegerArray(int cantidad ){
+
+        int[] array = new int[cantidad];
+        Random rand = new Random();
+
+        for (int i = 0; i < cantidad; i++) {
+            array[i] = random(10000); // Números aleatorios entre 0 y 99,999
+        }
+
+        return array;
+    }
+
+    public static int [] copyArray(int [] a){
+
+        int [] copy = new int [a.length];
+
+        for (int i = 0; i<a.length; i++){
+
+            copy[i] = a[i];
+
+        }
+
+        return copy;
+    }
+
+
+
 }
 
     /*

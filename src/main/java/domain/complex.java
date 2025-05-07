@@ -4,7 +4,7 @@ public class complex {
 
     private int counterRadix[];
 
-    public void quickSort(int arr[], int low, int high){
+    public  void quickSort(int arr[], int low, int high){
         int i=low;
         int j=high;
         int pivot=arr[(low+high)/2];

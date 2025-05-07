@@ -2,6 +2,25 @@ package domain;
 
 public class elementary {
 
+    private static int totalIteraciones;
+    private static int TotalCount;
+
+    public static int getTotalIteraciones() {
+        return totalIteraciones;
+    }
+
+    public static void setTotalIteraciones(int totalIteraciones) {
+        elementary.totalIteraciones = totalIteraciones;
+    }
+
+    public static int getTotalCount() {
+        return TotalCount;
+    }
+
+    public static void setTotalCount(int totalCount) {
+        TotalCount = totalCount;
+    }
+
     public static void bubbleSort(int a[]){
         for(int i=1;i<a.length;i++)
             for(int j=0;j<a.length-i;j++){
