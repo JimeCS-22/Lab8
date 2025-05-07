@@ -1,4 +1,4 @@
-package Elementary;
+package domain;
 
 public class elementary {
 
