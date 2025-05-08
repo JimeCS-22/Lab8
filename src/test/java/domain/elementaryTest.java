@@ -34,6 +34,7 @@ class elementaryTest {
             default:
                 return "Algoritmo no reconocido. Use BubbleSort, ImprovedBubbleSort, SelectionSort o CountingSort.";
         }
+
         String result = "";
         return result;
     }
