@@ -83,9 +83,7 @@ public class Utility {
     public static String show(int[] a, int n) {
         String result = "";
         for (int i = 0; i < n; i++) {
-
             result += a[i] + " ";
-
         }
         //End for
         return result;

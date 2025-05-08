@@ -43,7 +43,6 @@ class elementaryTest {
                 + "\n Sorted array " + util.Utility.show(a, n)
                 + "\n Total interactions " + getTotalIteractions()
                 + "\n Total changes " + getTotalChanges();
-
         return result;
     }
 
