@@ -18,7 +18,8 @@ class elementaryTest {
     }
 
     public static String elementarySorting(String algorithm, int[] a, int n) {
-        switch (algorithm.toLowerCase()) {
+        int[] originalArray = util.Utility.copyArray(a);
+        switch (algorithm) {
             case "bubblesort":
                 bubbleSort(a);
                 break;
@@ -36,6 +37,13 @@ class elementaryTest {
         }
 
         String result = "";
+        result += "\n" + algorithm + " -Test"
+                + "\nAlgorithm: " + algorithm
+                + "\n Original array " + util.Utility.show(originalArray, n)
+                + "\n Sorted array " + util.Utility.show(a, n)
+                + "\n Total interactions " + getTotalIteractions()
+                + "\n Total changes " + getTotalChanges();
+
         return result;
     }
 

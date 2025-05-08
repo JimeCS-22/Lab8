@@ -80,12 +80,14 @@ public class Utility {
         return x > y ? x : y;
     }
 
-    public static String show(int[] a) {
+    public static String show(int[] a, int n) {
         String result = "";
-        for (int item : a) {
-            if (item == 0) break; //si es cero es porque no hay más elementos
-            result += item + " ";
-        }//End for
+        for (int i = 0; i < n; i++) {
+
+            result += a[i] + " ";
+
+        }
+        //End for
         return result;
     }
 
