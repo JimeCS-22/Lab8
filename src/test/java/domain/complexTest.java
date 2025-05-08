@@ -1,6 +1,7 @@
 package domain;
 
 import org.junit.jupiter.api.Test;
+import util.Utility;
 
 class complexTest {
 
@@ -8,35 +9,37 @@ class complexTest {
     void test() {
 
         int[] a = {45, 17, 23, 55, 7};
-        System.out.println("The max number: " + util.Utility.maxArray(a));
+        System.out.println("The max number: " + Utility.maxArray(a));
 
     }
 
     @Test
     void complexTest() {
 
-        int[] a = util.Utility.getIntegerArray(10000);
-        int[] b = util.Utility.copyArray(a);  //no utilice Arrays.copyOf(a, a.length)
-        System.out.println(elementarySorting("bubbleSort", a, 50));
-        System.out.println(elementarySorting("improvedBubbleSort", b, 100));
-
-        elementarySorting("countingSort", util.Utility.getIntegerArray(10000), 200));
-        System.out.println(
-                elementarySorting("selectionSort", util.Utility.getIntegerArray(10000), 150));
-        System.out.println(
-                util.Utility.getIntegerArray( int n);// retorna un nuevo arreglo de números enteros de
-        // tamaño “n”, debidamente lleno, con valores entre 0 y 9999.
-        util.Utility.copyArray( int[] a);// copia el arreglo en uno nuevo y lo retorna
+        System.out.println(complexSorting("quickSort",
+                util.Utility.getIntegerArray(80000), 30));
+        System.out.println(complexSorting("radixSort",
+                util.Utility.getIntegerArray(40000), 50));
+        System.out.println(complexSorting("mergeSort",
+                util.Utility.getIntegerArray(15000), 100));
+        System.out.println(complexSorting("shellSort",
+                util.Utility.getIntegerArray(5000), 150));
 
 
     }
 
-    private String elementarySorting(String algorithm, int[] array, int n) {
+    private String complexSorting(String algorithm, int[] array, int n) {
+
+        int low = 0;//Poner el valor correcto
+        int high = array.length - 1; //Poner el valor correcto
+        int[] array2 = new int[array.length];
+        int[] originalArray = util.Utility.copyArray(array);
 
         switch (algorithm) {
+
             case "quickSort":
 
-                complex.quickSort(array);
+                complex.quickSort(array, low, high); //falta low y high
                 break;
 
             case "radixSort":
@@ -44,16 +47,28 @@ class complexTest {
                 break;
 
             case "mergeSort":
-                complex.mergeSort();
+                complex.mergeSort(array, array2, low, high);
                 break;
 
             case "shellSort":
-                complex.shellSort();
+                complex.shellSort(array);
                 break;
 
 
         }
-        return "";
+
+
+        String result = "";
+
+
+        result += "\n" + algorithm + "-Test"
+                + "\n Algorithm: " + algorithm
+                + "\n Original array " + util.Utility.show(originalArray, n)
+                + "\n Sorted array " + util.Utility.show(array, n)
+
+        ;
+
+        return result;
 
     }
 
