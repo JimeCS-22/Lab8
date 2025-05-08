@@ -1,7 +1,6 @@
 package util;
 
 
-
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -79,6 +78,7 @@ public class Utility {
     public static int max(int x, int y) {
         return x > y ? x : y;
     }
+
 
     public static String show(int[] a, int n) {
         String result = "";
@@ -175,7 +175,7 @@ public class Utility {
         return mayor;
     }
 
-    public static int[] getIntegerArray(int cantidad ){
+    public static int[] getIntegerArray(int cantidad) {
 
         int[] array = new int[cantidad];
         Random rand = new Random();
@@ -187,11 +187,11 @@ public class Utility {
         return array;
     }
 
-    public static int [] copyArray(int [] a){
+    public static int[] copyArray(int[] a) {
 
-        int [] copy = new int [a.length];
+        int[] copy = new int[a.length];
 
-        for (int i = 0; i<a.length; i++){
+        for (int i = 0; i < a.length; i++) {
 
             copy[i] = a[i];
 
@@ -199,7 +199,6 @@ public class Utility {
 
         return copy;
     }
-
 
 
 }
