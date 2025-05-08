@@ -65,6 +65,9 @@ class complexTest {
                 + "\n Algorithm: " + algorithm
                 + "\n Original array " + util.Utility.show(originalArray, n)
                 + "\n Sorted array " + util.Utility.show(array, n)
+                + "\n Low " + util.Utility.show(array, n)
+                + "\n High " + util.Utility.show(array, n)
+                + "\n Pivot " + util.Utility.show(array, n)
 
         ;
 
