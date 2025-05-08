@@ -8,4 +8,6 @@ module ucr.lab8 {
     exports ucr.lab8;
     exports controller;
     opens controller to javafx.fxml;
+    exports controller.elementary;
+    opens controller.elementary to javafx.fxml;
 }
