@@ -23,17 +23,17 @@
                                 <Font name="Arial" size="30.0" />
                             </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#BubbleSortOnAction" onMousePressed="#exampleOnMousePressed" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Imp-BubbleSort" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#impBubbleSortOnAction" onMousePressed="#exampleOnMousePressed" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Imp-BubbleSort" textFill="WHITE">
                             <font>
                                 <Font name="Arial" size="30.0" />
                             </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#probabilisticOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="SelectionSort" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#selectionSortOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="SelectionSort" textFill="WHITE">
                             <font>
                                 <Font name="Arial" size="30.0" />
                             </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#Exit" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="CountingSort" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#countingSortOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="CountingSort" textFill="WHITE">
                             <font>
                                 <Font name="Arial" size="30.0" />
                             </font>
@@ -42,29 +42,29 @@
                 </VBox>
                 <VBox style="-fx-background-color: #10ecb7;">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#probabilisticOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="QuickSort" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#quickSortOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="QuickSort" textFill="WHITE">
                             <font>
                                 <Font name="Arial" size="30.0" />
                             </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#probabilisticOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="RadixSort" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#radixSortOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="RadixSort" textFill="WHITE">
                             <font>
                                 <Font name="Arial" size="30.0" />
                             </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#probabilisticOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="MergeSort" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#mergeSortOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="MergeSort" textFill="WHITE">
                             <font>
                                 <Font name="Arial" size="30.0" />
                             </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#probabilisticOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="ShellSort" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#shellSortOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="ShellSort" textFill="WHITE">
                             <font>
                                 <Font name="Arial" size="30.0" />
                             </font>
                         </Button>
                     </children>
                 </VBox>
-                <Button mnemonicParsing="false" onAction="#probabilisticOnAction" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Exit" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#Exit" prefHeight="62.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Exit" textFill="WHITE">
                     <font>
                         <Font name="Arial" size="30.0" />
                     </font>

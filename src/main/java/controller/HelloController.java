@@ -31,7 +31,7 @@ public class HelloController {
 
     @FXML
     public void Home(ActionEvent actionEvent) {
-        this.txtMessage.setText("Laboratory 1");
+        this.txtMessage.setText("Laboratory 8");
         this.bp.setCenter(ap);
     }
 
@@ -52,14 +52,37 @@ public class HelloController {
     }
 
     @FXML
-    public void probabilisticOnAction(ActionEvent actionEvent) {
-        load("probabilistic.fxml");
+    public void mergeSortOnAction(ActionEvent actionEvent) {
+        load("MergeSort.fxml");
     }
 
     @FXML
-    public void dynamicOnAction(ActionEvent actionEvent) {
-        load("dynamic.fxml");
+    public void shellSortOnAction(ActionEvent actionEvent) {
+        load("ShellSort.fxml");
     }
 
+    @FXML
+    public void quickSortOnAction(ActionEvent actionEvent) {
+        load("QuickSorting.fxml");
+    }
 
+    @FXML
+    public void countingSortOnAction(ActionEvent actionEvent) {
+        load("CountingSorting.fxml");
+    }
+
+    @FXML
+    public void impBubbleSortOnAction(ActionEvent actionEvent) {
+        load("improvedBubbleSort.fxml");
+    }
+
+    @FXML
+    public void selectionSortOnAction(ActionEvent actionEvent) {
+        load("SelectionSorting.fxml");
+    }
+
+    @FXML
+    public void radixSortOnAction(ActionEvent actionEvent) {
+        load("RadixSorting.fxml");
+    }
 }

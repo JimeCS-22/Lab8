@@ -76,12 +76,15 @@ public class elementary {
 
     public static void countingSort(int a[]) {
         int max = util.Utility.maxArray(a); //va de 0 hasta el elemento maximo
+
         // create buckets
-        int counter[] = new int[max + 1];
+        int[] counter = new int[max + 1];
         // fill buckets
         for (int element : a) {
             counter[element]++; //incrementa el num de ocurrencias del elemento
         }
+        int[] counterCopy = counter.clone();
+
         // sort array
         int index = 0;
         for (int i = 0; i < counter.length; i++) {

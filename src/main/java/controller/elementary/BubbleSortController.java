@@ -60,5 +60,13 @@ public class BubbleSortController {
     void attentionProcessOnAction(ActionEvent event) {
 
     }
+
+    @FXML
+    public void autoEnQueueOnAction(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void cleanOnAction(ActionEvent actionEvent) {
+    }
 }
 
