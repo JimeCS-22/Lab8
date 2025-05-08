@@ -47,8 +47,8 @@ public class HelloController {
     }
 
     @FXML
-    public void vectorOnAction(ActionEvent actionEvent) {
-        load("vector.fxml");
+    public void BubbleSortOnAction(ActionEvent actionEvent) {
+        load("BubbleSort.fxml");
     }
 
     @FXML
@@ -60,5 +60,6 @@ public class HelloController {
     public void dynamicOnAction(ActionEvent actionEvent) {
         load("dynamic.fxml");
     }
+
 
 }
