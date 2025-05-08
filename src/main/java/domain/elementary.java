@@ -23,14 +23,17 @@ public class elementary {
     public static void bubbleSort(int a[]){
         totalIteractions = 0;
         totalChanges = 0;
-        for(int i=1;i<a.length;i++)
-            for(int j=0;j<a.length-i;j++){
-                if(a[j]>a[j+1]){
-                    int aux=a[j];
-                    a[j]=a[j+1];
-                    a[j+1]=aux;
+        for(int i=1;i<a.length;i++) {
+            totalIteractions++;
+            for (int j = 0; j < a.length - i; j++) {
+                if (a[j] > a[j + 1]) {
+                    int aux = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = aux;
+                    totalChanges++;
                 }//if
             }//for j
+        }
     }
 
     public static void improvedBubbleSort(int a[]){
@@ -39,12 +42,14 @@ public class elementary {
         boolean swapped = true; //intercambiado
         for(int i=1;swapped;i++){
             swapped = false;
+            totalIteractions++;
             for(int j=0;j<a.length-i;j++){
                 if(a[j]>a[j+1]){
                     int aux=a[j];
                     a[j]=a[j+1];
                     a[j+1]=aux;
                     swapped = true;
+                    totalChanges++;
                 }//if
             }//for j
         }//for i
@@ -56,10 +61,12 @@ public class elementary {
         for(int i=0;i<a.length-1;i++){
             int min=a[i];
             int minIndex=i;
+            totalIteractions++;
             for(int j=i+1;j<a.length;j++){
                 if(a[j]<min){
                     min=a[j];
                     minIndex=j;
+                    totalChanges++;
                 }//if
             }//for j
             a[minIndex]=a[i];
