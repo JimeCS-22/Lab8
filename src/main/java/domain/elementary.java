@@ -1,6 +1,24 @@
 package domain;
 
 public class elementary {
+    private static int totalIteractions;
+    private static int totalChanges;
+
+    public static int getTotalIteractions() {
+        return totalIteractions;
+    }
+
+    public static void setTotalIteractions(int totalIteractions) {
+        elementary.totalIteractions = totalIteractions;
+    }
+
+    public static int getTotalChanges() {
+        return totalChanges;
+    }
+
+    public static void setTotalChanges(int totalChanges) {
+        elementary.totalChanges = totalChanges;
+    }
 
     private static int totalIteraciones;
     private static int TotalCount;
@@ -22,6 +40,8 @@ public class elementary {
     }
 
     public static void bubbleSort(int a[]){
+        totalIteractions = 0;
+        totalChanges = 0;
         for(int i=1;i<a.length;i++)
             for(int j=0;j<a.length-i;j++){
                 if(a[j]>a[j+1]){
@@ -33,6 +53,8 @@ public class elementary {
     }
 
     public static void improvedBubbleSort(int a[]){
+        totalIteractions = 0;
+        totalChanges = 0;
         boolean swapped = true; //intercambiado
         for(int i=1;swapped;i++){
             swapped = false;
@@ -48,6 +70,8 @@ public class elementary {
     }
 
     public static void selectionSort(int a[]){
+        totalIteractions = 0;
+        totalChanges = 0;
         for(int i=0;i<a.length-1;i++){
             int min=a[i];
             int minIndex=i;
