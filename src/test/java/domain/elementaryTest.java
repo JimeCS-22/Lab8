@@ -9,7 +9,6 @@ class elementaryTest {
 
     @Test
     void elementaryTest(){
-
     }
 
     public String elementarySorting(String algorithm, int[] a, int n) {
