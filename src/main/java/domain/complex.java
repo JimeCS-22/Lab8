@@ -1,46 +1,47 @@
 package domain;
 
 public class complex {
-    private static int totalIteractions;
-    private static int totalChanges;
+    private static int low;
+    private static int high;
     private static int pivot;
 
 
     private static int[] counterRadix;
 
-    public static void quickSort(int arr[], int low, int high){
-        int i=low;
-        int j=high;
-        int pivot=arr[(low+high)/2];
-        do{
-            while(arr[i]<pivot) i++;
-            while(arr[j]>pivot) j--;
-            if(i<=j){
-                int aux=arr[i];
-                arr[i]=arr[j];
-                arr[j]=aux;
-                i++;j--;
+    public static void quickSort(int arr[], int low, int high) {
+        int i = low;
+        int j = high;
+        int pivot = arr[(low + high) / 2];
+        do {
+            while (arr[i] < pivot) i++;
+            while (arr[j] > pivot) j--;
+            if (i <= j) {
+                int aux = arr[i];
+                arr[i] = arr[j];
+                arr[j] = aux;
+                i++;
+                j--;
             }//if
-        }while(i<=j);//do
+        } while (i <= j);//do
 
-        if(low<j) quickSort(arr,low,j);
-        if(i<high) quickSort(arr,i,high);
+        if (low < j) quickSort(arr, low, j);
+        if (i < high) quickSort(arr, i, high);
     }
 
-    public static void radixSort(int a[], int n){
+    public static void radixSort(int a[], int n) {
         // Find the maximum number to know number of digits
         int m = util.Utility.maxArray(a); //va de 0 hasta el elemento maximo
 
         // Do counting sort for every digit. Note that instead
         // of passing digit number, exp is passed. exp is 10^i
         // where i is current digit number
-        for (int exp = 1; m/exp > 0; exp *= 10)
+        for (int exp = 1; m / exp > 0; exp *= 10)
             countSort(a, n, exp);
     }
 
     // A function to do counting sort of a[] according to
     // the digit represented by exp.
-    private static void countSort(int a[], int n, int exp){
+    private static void countSort(int a[], int n, int exp) {
         int output[] = new int[n]; // output array
         int i;
         int count[] = new int[10];
@@ -58,8 +59,8 @@ public class complex {
 
         // Build the output array
         for (i = n - 1; i >= 0; i--) {
-            output[count[ (a[i]/exp)%10 ] - 1] = a[i];
-            count[ (a[i]/exp)%10 ]--;
+            output[count[(a[i] / exp) % 10] - 1] = a[i];
+            count[(a[i] / exp) % 10]--;
         }
 
         // Copy the output array to a[], so that a[] now
@@ -67,49 +68,48 @@ public class complex {
         for (i = 0; i < n; i++)
             a[i] = output[i];
 
-        counterRadix=count;
+        counterRadix = count;
     }
 
-    public static void mergeSort(int a[], int tmp[], int low, int high){
-        if(low<high){
-            int center = (low+high)/2;
-            mergeSort(a,tmp,low,center );
-            mergeSort(a,tmp,center+1,high);
-            merge(a,tmp,low,center+1,high);
+    public static void mergeSort(int a[], int tmp[], int low, int high) {
+        if (low < high) {
+            int center = (low + high) / 2;
+            mergeSort(a, tmp, low, center);
+            mergeSort(a, tmp, center + 1, high);
+            merge(a, tmp, low, center + 1, high);
         }//if
     }
 
-    private static void merge(int a[], int tmp[], int lowIndex, int highIndex, int endIndex){
+    private static void merge(int a[], int tmp[], int lowIndex, int highIndex, int endIndex) {
         int leftEnd = highIndex - 1;
         int tmpPos = lowIndex;
         int numElements = endIndex - lowIndex + 1;
-        while( lowIndex <= leftEnd && highIndex <= endIndex )
-            if(a[lowIndex]<=a[highIndex]) {
+        while (lowIndex <= leftEnd && highIndex <= endIndex)
+            if (a[lowIndex] <= a[highIndex]) {
                 tmp[tmpPos++] = a[lowIndex++];
-            }
-            else{
+            } else {
                 tmp[tmpPos++] = a[highIndex++];
             }
-        while(lowIndex<= leftEnd) {
+        while (lowIndex <= leftEnd) {
             tmp[tmpPos++] = a[lowIndex++];
         }
-        while( highIndex <= endIndex ) {
+        while (highIndex <= endIndex) {
             tmp[tmpPos++] = a[highIndex++];
         }
-        for( int i=0;i<numElements;i++,endIndex--)
+        for (int i = 0; i < numElements; i++, endIndex--)
             a[endIndex] = tmp[endIndex];
     }
 
     public static void shellSort(int a[]) {
         int n = a.length;
         // Start with a big gap, then reduce the gap
-        for (int gap = n/2; gap > 0; gap /= 2){
+        for (int gap = n / 2; gap > 0; gap /= 2) {
             // Do a gapped insertion sort for this gap size.
             // The first gap elements a[0..gap-1] are already
             // in gapped order keep adding one more element
             // until the entire array is gap sorted
-            int x=1;
-            for (int i = gap; i < n; i += 1){
+            int x = 1;
+            for (int i = gap; i < n; i += 1) {
                 // add a[i] to the elements that have been gap
                 // sorted save a[i] in temp and make a hole at
                 // position i

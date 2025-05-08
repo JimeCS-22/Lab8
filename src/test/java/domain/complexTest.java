@@ -68,6 +68,7 @@ class complexTest {
                 + "\n Low " + util.Utility.show(array, n)
                 + "\n High " + util.Utility.show(array, n)
                 + "\n Pivot " + util.Utility.show(array, n)
+                + "\n bla " + util.Utility.show(array, n)
 
         ;
 
