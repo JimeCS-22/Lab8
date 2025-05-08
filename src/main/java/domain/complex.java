@@ -1,6 +1,10 @@
 package domain;
 
 public class complex {
+    private static int totalIteractions;
+    private static int totalChanges;
+    private static int pivot;
+
 
     private static int[] counterRadix;
 
