@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import util.FXUtility;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.Random;
 
 public class BubbleSortController {
@@ -133,15 +134,21 @@ public class BubbleSortController {
 
     @FXML
     private void cleanOnAction(ActionEvent event) {
-        resetTables();
-        arrayLengthTextField.clear();
-        lowTextField.clear();
-        highTextField.clear();
-        totalChangesTextField.clear();
-        totalIterationsTextField.clear();
-        numberArray = null;
-        starButton.setDisable(true);
-        randomizeButton.setDisable(true);
+        Optional<ButtonType> result = util.FXUtility.showConfirmation("Confirmation",
+                "Are you sure you want to clear the fields and tables?",
+                "This action will delete all current information.");
+
+        if (result.isPresent() && result.get().getText().equals("Sí")) {
+            resetTables();
+            arrayLengthTextField.clear();
+            lowTextField.clear();
+            highTextField.clear();
+            totalChangesTextField.clear();
+            totalIterationsTextField.clear();
+            numberArray = null;
+            starButton.setDisable(true);
+            randomizeButton.setDisable(true);
+        }
     }
 
     // ===== Métodos auxiliares =====

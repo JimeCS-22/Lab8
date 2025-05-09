@@ -3,7 +3,7 @@ package domain;
 import java.util.Arrays;
 
 public class complex {
-    static int quickSortRecursiveCalls = 0;
+    public static int quickSortRecursiveCalls = 0;
     static int mergeSortRecursiveCalls = 0;
     private static int[] counterRadix;
 

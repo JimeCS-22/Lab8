@@ -176,10 +176,9 @@ public class Utility {
     public static int[] getIntegerArray(int cantidad) {
 
         int[] array = new int[cantidad];
-        Random rand = new Random();
 
         for (int i = 0; i < cantidad; i++) {
-            array[i] = random(10000); // Números aleatorios entre 0 y 99,999
+            array[i] = util.Utility.random(10000); // Números aleatorios entre 0 y 99,999
         }
 
         return array;
@@ -196,6 +195,10 @@ public class Utility {
         }
 
         return copy;
+    }
+
+    public static int randomInRange(int lower, int upper) {
+        return random.nextInt(upper - lower + 1) + lower;
     }
 
 
