@@ -1,15 +1,14 @@
 module ucr.lab8 {
     requires javafx.controls;
     requires javafx.fxml;
-    requires javafx.graphics;
-
 
     opens ucr.lab8 to javafx.fxml;
+    opens controller to javafx.fxml;
+    opens controller.elementary to javafx.fxml;
+    opens controller.complex to javafx.fxml;
+
     exports ucr.lab8;
     exports controller;
-    opens controller to javafx.fxml;
     exports controller.elementary;
-    opens controller.elementary to javafx.fxml;
     exports controller.complex;
-    opens controller.complex to javafx.fxml;
 }

@@ -44,11 +44,11 @@ public class BubbleSortController {
     @FXML
     private void createOnAction(ActionEvent event) {
         try {
-            // Validar campos
+            // Validate fields
             if (arrayLengthTextField.getText().isEmpty() ||
                     lowTextField.getText().isEmpty() ||
                     highTextField.getText().isEmpty()) {
-                FXUtility.showErrorAlert("Error", "Todos los campos son requeridos");
+                FXUtility.showErrorAlert("Error", "All fields are required");
                 return;
             }
 
@@ -57,33 +57,33 @@ public class BubbleSortController {
             int high = Integer.parseInt(highTextField.getText());
 
             if (length <= 0 || length > 200) {
-                FXUtility.showErrorAlert("Error", "La longitud debe estar entre 1 y 200");
+                FXUtility.showErrorAlert("Error", "Length must be between 1 and 200");
                 return;
             }
 
             if (low >= high) {
-                FXUtility.showErrorAlert("Error", "El valor mínimo debe ser menor al máximo");
+                FXUtility.showErrorAlert("Error", "Minimum value must be less than maximum");
                 return;
             }
 
-            // Reset antes de crear nuevo array
+            // Reset before creating new array
             resetTables();
 
-            // Crear y generar valores
+            // Create and generate values
             numberArray = new int[length];
             generateRandomValues(low, high);
 
-            // Configurar y mostrar datos
+            // Configure and show data
             safeTableUpdate(noSortedArrayTableView, numberArray);
 
-            // Habilitar botones
+            // Enable buttons
             randomizeButton.setDisable(false);
             starButton.setDisable(false);
 
-            FXUtility.showMessage("Éxito", "Array creado y valores generados");
+            FXUtility.showMessage("Success", "Array created and values generated");
 
         } catch (NumberFormatException e) {
-            FXUtility.showErrorAlert("Error", "Ingrese valores numéricos válidos");
+            FXUtility.showErrorAlert("Error", "Please enter valid numeric values");
         }
     }
 
@@ -93,65 +93,73 @@ public class BubbleSortController {
             int low = Integer.parseInt(lowTextField.getText());
             int high = Integer.parseInt(highTextField.getText());
 
-            // Regenerar valores
+            // Regenerate values
             generateRandomValues(low, high);
 
-            // Actualizar la tabla no ordenada
+            // Update unsorted table
             safeTableUpdate(noSortedArrayTableView, numberArray);
 
-            FXUtility.showMessage("Éxito", "Nuevos valores aleatorios generados");
+            FXUtility.showMessage("Success", "New random values generated");
 
         } catch (NumberFormatException e) {
-            FXUtility.showErrorAlert("Error", "Error al regenerar valores");
+            FXUtility.showErrorAlert("Error", "Error while generating new values");
         }
     }
 
     @FXML
     private void starOnAction(ActionEvent event) {
         if (numberArray == null) {
-            FXUtility.showErrorAlert("Error", "Primero debe crear el array");
+            FXUtility.showErrorAlert("Error", "You must create an array first");
             return;
         }
 
-        // Ordenar
+        // Sort
         int[] sortedArray = numberArray.clone();
         elementary.bubbleSort(sortedArray);
 
-        // Configurar tabla ordenada si es la primera vez
+        // Configure sorted table if first time
         if (sortedArrayTableView.getColumns().isEmpty()) {
             configureTableColumns(sortedArrayTableView, sortedArray.length);
         }
 
-        // Mostrar resultados
+        // Show results
         sortedArrayTableView.getItems().clear();
         sortedArrayTableView.getItems().add(sortedArray);
 
         totalIterationsTextField.setText(String.valueOf(elementary.getTotalIteractions()));
         totalChangesTextField.setText(String.valueOf(elementary.getTotalChanges()));
 
-        FXUtility.showMessage("Éxito", "Array ordenado correctamente");
+        FXUtility.showMessage("Success", "Array sorted successfully");
     }
 
     @FXML
     private void cleanOnAction(ActionEvent event) {
-        Optional<ButtonType> result = util.FXUtility.showConfirmation("Confirmation",
-                "Are you sure you want to clear the fields and tables?",
-                "This action will delete all current information.");
+        Optional<ButtonType> result = FXUtility.showConfirmation("Clear All",
+                "Confirm Clear Operation",
+                "This will reset all fields and clear the tables. Continue?");
 
         if (result.isPresent() && result.get().getText().equals("Sí")) {
-            resetTables();
-            arrayLengthTextField.clear();
-            lowTextField.clear();
-            highTextField.clear();
-            totalChangesTextField.clear();
-            totalIterationsTextField.clear();
-            numberArray = null;
-            starButton.setDisable(true);
-            randomizeButton.setDisable(true);
+            try {
+                resetTables();
+                arrayLengthTextField.clear();
+                lowTextField.clear();
+                highTextField.clear();
+                totalChangesTextField.clear();
+                totalIterationsTextField.clear();
+                numberArray = null;
+                starButton.setDisable(true);
+                randomizeButton.setDisable(true);
+
+                FXUtility.showMessage("Cleared", "All fields have been reset successfully");
+            } catch (Exception e) {
+                FXUtility.showErrorAlert("Error", "Failed to clear fields: " + e.getMessage());
+            }
+        } else {
+            FXUtility.showMessage("Cancelled", "Operation was cancelled by user");
         }
     }
 
-    // ===== Métodos auxiliares =====
+    // ===== Helper methods =====
     private void generateRandomValues(int low, int high) {
         for (int i = 0; i < numberArray.length; i++) {
             numberArray[i] = random.nextInt(high - low + 1) + low;
