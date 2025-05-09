@@ -5,10 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
@@ -24,6 +21,17 @@ import static domain.complex.quickSortRecursiveCalls;
 public class QuickSortController {
 
     @FXML
+    public Button cleanButton;
+    public Button autoButton;
+    public Button attentionButton;
+    public Button autoButton1;
+    public Button Button;
+    public TextField nameTextField2;
+    public TextField nameTextField21;
+    public TextField nameTextField22;
+    public TextField nameTextField221;
+
+    @FXML
     private AnchorPane AP;
 
     @FXML
@@ -37,18 +45,6 @@ public class QuickSortController {
 
     @FXML
     private TextField nameTextField11;
-
-    @FXML
-    private TextField nameTextField12;
-
-    @FXML
-    private TextField nameTextField121;
-
-    @FXML
-    private TextField nameTextField122;
-
-    @FXML
-    private TextField nameTextField1221;
 
     @FXML
     private TableView<?> tableView;
@@ -111,11 +107,12 @@ public class QuickSortController {
             nameTextField.clear();
             nameTextField1.clear();
             nameTextField11.clear();
-            nameTextField12.clear();
-            nameTextField121.clear();
-            nameTextField122.clear();
-            nameTextField1221.clear();
-            txtMessage.setText("Data deleted.");
+            nameTextField2.clear();
+            nameTextField21.clear();
+            nameTextField22.clear();
+            nameTextField221.clear();
+
+
         }
     }
 
@@ -145,7 +142,7 @@ public class QuickSortController {
             pivotValues.clear();
             quickSortWithTracking(sortedArray, 0, sortedArray.length - 1); // Aquí el cambio
             displayArray((TableView<ObservableList<Integer>>) tableView1, sortedArray, "Sorted Array");
-            nameTextField1221.setText(String.valueOf(quickSortRecursiveCalls));
+            nameTextField221.setText(String.valueOf(quickSortRecursiveCalls));
             displayPivotValues();
             util.FXUtility.showMessage("Quick Sort Completed", "The array has been sorted");
         } else {
@@ -196,21 +193,24 @@ public class QuickSortController {
                     pivotVals.add(values[2]);
                 }
             }
-            nameTextField12.setText(lowValues.toString());
-            nameTextField121.setText(highValues.toString());
-            nameTextField122.setText(pivotVals.toString());
+
+            nameTextField2.setText(lowValues.toString());
+            nameTextField21.setText(highValues.toString());
+            nameTextField22.setText(pivotVals.toString());
+            nameTextField221.setText(String.valueOf(quickSortRecursiveCalls));
         } else {
-            nameTextField12.setText("");
-            nameTextField121.setText("");
-            nameTextField122.setText("");
+            nameTextField2.clear();
+            nameTextField21.clear();
+            nameTextField22.clear();
+            nameTextField221.clear();
         }
     }
 
     private void clearAuxiliaryTextFields() {
-        nameTextField12.clear();
-        nameTextField121.clear();
-        nameTextField122.clear();
-        nameTextField1221.clear();
+        nameTextField2.clear();
+        nameTextField21.clear();
+        nameTextField22.clear();
+        nameTextField221.clear();
     }
 
     private void quickSortWithTracking(int[] arr, int low, int high) {
@@ -218,10 +218,10 @@ public class QuickSortController {
             int pivot = arr[(low + high) / 2];
             QuickSortController.pivotValues.add(new int[]{low, high, pivot});
 
-            // Llama a la función original (que no puedes modificar)
             domain.complex.quickSort(arr, low, high);
         }
     }
+
 
 
 }
