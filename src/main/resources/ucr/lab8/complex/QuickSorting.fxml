@@ -17,7 +17,7 @@
             <children>
                 <Pane prefHeight="83.0" prefWidth="790.0" style="-fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #384463 0.0%, #343336 100.0%);">
                     <children>
-                        <Text fx:id="txtMessage" layoutX="48.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quick Sorting Algorithm" textAlignment="CENTER" wrappingWidth="642.94921875">
+                        <Text fx:id="txtMessage" layoutX="48.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shell Sort Algorithm" textAlignment="CENTER" wrappingWidth="642.94921875">
                             <font>
                                 <Font name="Serif Regular" size="47.0" />
                             </font>
@@ -46,85 +46,85 @@
                             <children>
                                 <Text fill="WHITE" layoutX="8.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Array length:">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font size="33.0" />
                                     </font>
                                 </Text>
-                                <TextField fx:id="nameTextField" layoutX="129.0" layoutY="41.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #FFFFFF;" />
-                                <Text fill="WHITE" layoutX="319.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="low bound:">
+                                <TextField fx:id="nameTextField" layoutX="195.0" layoutY="33.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #FFFFFF;" />
+                                <Text fill="WHITE" layoutX="379.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="low bound:">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font size="23.0" />
                                     </font>
                                 </Text>
-                                <Button fx:id="Button" layoutX="587.0" layoutY="49.0" mnemonicParsing="false" onAction="#createOnAction" prefHeight="37.0" prefWidth="93.0" style="-fx-background-radius: 15; -fx-background-color: #9b9b9b;" text="Create" textFill="WHITE" />
+                                <Button fx:id="cleanButton" layoutX="672.0" layoutY="56.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="37.0" prefWidth="93.0" style="-fx-background-radius: 15; -fx-background-color: #9b9b9b;" text="Create" textFill="WHITE" />
                                 <Text fill="WHITE" layoutX="26.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(max 200)">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font size="23.0" />
                                     </font>
                                 </Text>
-                                <Text fill="WHITE" layoutX="319.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="high bound: ">
+                                <Text fill="WHITE" layoutX="379.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="high bound: ">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font size="23.0" />
                                     </font>
                                 </Text>
-                                <TextField fx:id="nameTextField1" layoutX="431.0" layoutY="26.0" prefHeight="31.0" prefWidth="141.0" style="-fx-background-color: #FFFFFF;" />
-                                <TextField fx:id="nameTextField11" layoutX="431.0" layoutY="78.0" prefHeight="31.0" prefWidth="141.0" style="-fx-background-color: #FFFFFF;" />
+                                <TextField fx:id="nameTextField1" layoutX="509.0" layoutY="33.0" prefHeight="31.0" prefWidth="141.0" style="-fx-background-color: #FFFFFF;" />
+                                <TextField fx:id="nameTextField11" layoutX="509.0" layoutY="74.0" prefHeight="31.0" prefWidth="141.0" style="-fx-background-color: #FFFFFF;" />
                             </children>
                         </Pane>
                         <Pane layoutY="141.0" prefHeight="421.0" prefWidth="790.0" style="-fx-background-color: #4053A9;">
                             <children>
-                                <TableView fx:id="tableView" layoutX="14.0" layoutY="34.0" prefHeight="117.0" prefWidth="756.0" />
-                                <Text fill="WHITE" layoutX="298.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No sorted array" wrappingWidth="243.9984130859375">
+                                <TableView fx:id="tableView" layoutX="16.0" layoutY="44.0" prefHeight="117.0" prefWidth="756.0" />
+                                <Text fill="WHITE" layoutX="285.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No sorted array" wrappingWidth="243.9984130859375">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font size="33.0" />
                                     </font>
                                 </Text>
-                                <TableView fx:id="tableView1" layoutX="14.0" layoutY="284.0" prefHeight="117.0" prefWidth="756.0" />
-                                <Text fill="WHITE" layoutX="23.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Low">
+                                <TableView fx:id="tableView1" layoutX="16.0" layoutY="296.0" prefHeight="117.0" prefWidth="756.0" />
+                                <Text fill="WHITE" layoutX="23.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gap (n/2)">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font size="23.0" />
                                     </font>
                                 </Text>
-                                <TextField fx:id="nameTextField12" layoutX="86.0" layoutY="178.0" prefHeight="31.0" prefWidth="141.0" style="-fx-background-color: #FFFFFF;" />
-                                <Text fill="WHITE" layoutX="26.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="High">
+                                <TextField fx:id="nameTextField12" layoutX="136.0" layoutY="178.0" prefHeight="31.0" prefWidth="141.0" style="-fx-background-color: #FFFFFF;" />
+                                <Text fill="WHITE" layoutX="26.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gab subarray 1 ">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font size="23.0" />
                                     </font>
                                 </Text>
-                                <TextField fx:id="nameTextField121" layoutX="86.0" layoutY="212.0" prefHeight="31.0" prefWidth="141.0" style="-fx-background-color: #FFFFFF;" />
+                                <TextField fx:id="nameTextField121" layoutX="194.0" layoutY="219.0" prefHeight="31.0" prefWidth="141.0" style="-fx-background-color: #FFFFFF;" />
                                 <Text fill="WHITE" layoutX="285.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorted Array" wrappingWidth="186.3984375">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font size="33.0" />
                                     </font>
                                 </Text>
-                                <Text fill="WHITE" layoutX="269.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pivot">
+                                <Text fill="WHITE" layoutX="414.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gab subarray 2">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font size="23.0" />
                                     </font>
                                 </Text>
-                                <TextField fx:id="nameTextField122" layoutX="358.0" layoutY="178.0" prefHeight="31.0" prefWidth="141.0" style="-fx-background-color: #FFFFFF;" />
-                                <Text fill="WHITE" layoutX="269.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recursive calls">
+                                <TextField fx:id="nameTextField122" layoutX="580.0" layoutY="178.0" prefHeight="31.0" prefWidth="141.0" style="-fx-background-color: #FFFFFF;" />
+                                <Text fill="WHITE" layoutX="417.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gab subarray3">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font size="23.0" />
                                     </font>
                                 </Text>
-                                <TextField fx:id="nameTextField1221" layoutX="428.0" layoutY="212.0" prefHeight="31.0" prefWidth="141.0" style="-fx-background-color: #FFFFFF;" />
+                                <TextField fx:id="nameTextField1221" layoutX="580.0" layoutY="219.0" prefHeight="31.0" prefWidth="141.0" style="-fx-background-color: #FFFFFF;" />
                             </children>
                         </Pane>
                     </children>
                 </Pane>
-                <Pane fx:id="buttonPane" layoutX="11.0" layoutY="622.0" prefHeight="83.0" prefWidth="769.0">
+                <Pane fx:id="buttonPane" layoutX="11.0" layoutY="647.0" prefHeight="72.0" prefWidth="769.0">
                     <children>
-                        <Button fx:id="autoButton" layoutX="97.0" layoutY="23.0" mnemonicParsing="false" onAction="#starOnAction" prefHeight="37.0" prefWidth="165.0" style="-fx-background-radius: 15; -fx-background-color: #9b9b9b;" text="Star">
+                        <Button fx:id="autoButton" layoutX="97.0" layoutY="23.0" mnemonicParsing="false" onAction="#autoEnQueueOnAction" prefHeight="37.0" prefWidth="165.0" style="-fx-background-radius: 15; -fx-background-color: #9b9b9b;" text="Star">
                             <font>
                                 <Font name="Arial" size="20.0" />
                             </font>
                         </Button>
-                        <Button fx:id="attentionButton" layoutX="443.0" layoutY="23.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="37.0" prefWidth="165.0" style="-fx-background-radius: 15; -fx-background-color: #9b9b9b;" text="Clear">
+                        <Button fx:id="attentionButton" layoutX="443.0" layoutY="23.0" mnemonicParsing="false" onAction="#attentionProcessOnAction" prefHeight="37.0" prefWidth="165.0" style="-fx-background-radius: 15; -fx-background-color: #9b9b9b;" text="Clear">
                             <font>
                                 <Font name="Arial" size="20.0" />
                             </font>
                         </Button>
-                        <Button fx:id="autoButton1" layoutX="272.0" layoutY="23.0" mnemonicParsing="false" onAction="#randomizeOnAction" prefHeight="37.0" prefWidth="165.0" style="-fx-background-radius: 15; -fx-background-color: #9b9b9b;" text="Randomize">
+                        <Button fx:id="autoButton1" layoutX="272.0" layoutY="23.0" mnemonicParsing="false" onAction="#autoEnQueueOnAction" prefHeight="37.0" prefWidth="165.0" style="-fx-background-radius: 15; -fx-background-color: #9b9b9b;" text="Randomize">
                             <font>
                                 <Font name="Arial" size="20.0" />
                             </font>
