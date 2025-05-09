@@ -2,10 +2,13 @@ package util;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class FXUtility {
 
@@ -59,12 +62,26 @@ public class FXUtility {
         alert.showAndWait();
     }
 
-    public static void showAlert(String title, String message, Alert.AlertType information) {
+    public static Optional<ButtonType> showAlert(String title, String message, Alert.AlertType information) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null); // Sin encabezado
         alert.setContentText(message);
         alert.showAndWait();
+        return null;
+    }
+
+    public static Optional<ButtonType> showConfirmation(String title, String header, String content) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+
+        ButtonType yesButton = new ButtonType("Sí");
+        ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
+        alert.getButtonTypes().setAll(yesButton, noButton);
+
+        return alert.showAndWait(); // Devuelve la opción seleccionada
     }
 
 }//END CLASS
