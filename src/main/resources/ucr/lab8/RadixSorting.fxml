@@ -84,7 +84,7 @@
                                     <Font size="33.0" />
                                 </font>
                             </Text>
-                            <Text fill="WHITE" layoutX="256.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Counter Array" wrappingWidth="243.9984130859375">
+                            <Text fill="WHITE" layoutX="256.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorted Array" wrappingWidth="243.9984130859375">
                                 <font>
                                     <Font size="33.0" />
                                 </font>
@@ -92,15 +92,6 @@
                             <TableView fx:id="tableView11" layoutX="16.0" layoutY="377.0" prefHeight="107.0" prefWidth="756.0" />
                         </children>
                     </Pane>
-                </children>
-            </Pane>
-            <Pane fx:id="buttonPane" layoutX="11.0" layoutY="647.0" prefHeight="72.0" prefWidth="769.0">
-                <children>
-                    <Button fx:id="autoButton" layoutX="99.0" layoutY="53.0" mnemonicParsing="false" onAction="#autoEnQueueOnAction" prefHeight="37.0" prefWidth="165.0" style="-fx-background-radius: 15; -fx-background-color: #9b9b9b;" text="Star">
-                        <font>
-                            <Font name="Arial" size="20.0" />
-                        </font>
-                    </Button>
                 </children>
             </Pane>
         </children>
@@ -115,5 +106,10 @@
             <Font name="Arial" size="20.0" />
         </font>
     </Button>
+        <Button fx:id="autoButton" layoutX="107.0" layoutY="703.0" mnemonicParsing="false" onAction="#autoEnQueueOnAction" prefHeight="37.0" prefWidth="165.0" style="-fx-background-radius: 15; -fx-background-color: #9b9b9b;" text="Star">
+            <font>
+                <Font name="Arial" size="20.0" />
+            </font>
+        </Button>
 </children>
 </AnchorPane>
