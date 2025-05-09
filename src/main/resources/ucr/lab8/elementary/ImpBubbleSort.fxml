@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="AP" prefHeight="674.0" prefWidth="784.0" style="-fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #384463 0.0%, #343336 100.0%);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.elementary.BubbleSortController">
+<AnchorPane fx:id="AP" prefHeight="674.0" prefWidth="784.0" style="-fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #384463 0.0%, #343336 100.0%);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.elementary.ImprovedBubbleSortController">
     <children>
         <Pane fx:id="mainPain" prefHeight="719.0" prefWidth="790.0">
             <children>

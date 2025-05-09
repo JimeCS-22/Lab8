@@ -114,7 +114,7 @@ public class ImprovedBubbleSortController {
 
         // Ordenar
         int[] sortedArray = numberArray.clone();
-        elementary.bubbleSort(sortedArray);
+        elementary.improvedBubbleSort(sortedArray);
 
         // Configurar tabla ordenada si es la primera vez
         if (sortedArrayTableView.getColumns().isEmpty()) {

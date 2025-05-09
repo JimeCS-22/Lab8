@@ -7,7 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
-import ucr.lab8.HelloApplication;
+import util.FXUtility;
 
 import java.io.IOException;
 
@@ -20,12 +20,22 @@ public class HelloController {
     @FXML
     private AnchorPane ap;
 
-    private void load(String form) {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(form));
+    private void load(String formName) {
         try {
+            // Construye la ruta correcta al archivo FXML
+            String fxmlPath = "/ucr/lab8/" + formName;
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlPath));
+
+            if (fxmlLoader.getLocation() == null) {
+                throw new IOException("No se pudo encontrar el archivo: " + fxmlPath);
+            }
+
             this.bp.setCenter(fxmlLoader.load());
+            txtMessage.setText("Cargado: " + formName);
+
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            FXUtility.showErrorAlert("Error", "No se pudo cargar la vista: " + formName + "\n" + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -43,46 +53,46 @@ public class HelloController {
     @FXML
     public void exampleOnMousePressed(Event event) {
         this.txtMessage.setText("Loading Example. Please wait!!!");
-
     }
 
+    // Métodos para cargar los diferentes algoritmos de ordenamiento
     @FXML
     public void BubbleSortOnAction(ActionEvent actionEvent) {
-        load("BubbleSort.fxml");
+        load("elementary/BubbleSort.fxml");
     }
 
     @FXML
     public void mergeSortOnAction(ActionEvent actionEvent) {
-        load("MergeSort.fxml");
+        load("complex/MergeSort.fxml");
     }
 
     @FXML
     public void shellSortOnAction(ActionEvent actionEvent) {
-        load("ShellSort.fxml");
+        load("complex/ShellSort.fxml");
     }
 
     @FXML
     public void quickSortOnAction(ActionEvent actionEvent) {
-        load("QuickSorting.fxml");
+        load("complex/QuickSorting.fxml");
     }
 
     @FXML
     public void countingSortOnAction(ActionEvent actionEvent) {
-        load("CountingSorting.fxml");
+        load("elementary/CountingSorting.fxml");
     }
 
     @FXML
     public void impBubbleSortOnAction(ActionEvent actionEvent) {
-        load("improvedBubbleSort.fxml");
+        load("elementary/ImpBubbleSort.fxml");
     }
 
     @FXML
     public void selectionSortOnAction(ActionEvent actionEvent) {
-        load("SelectionSorting.fxml");
+        load("elementary/SelectionSorting.fxml");
     }
 
     @FXML
     public void radixSortOnAction(ActionEvent actionEvent) {
-        load("RadixSorting.fxml");
+        load("complex/RadixSorting.fxml");
     }
 }
