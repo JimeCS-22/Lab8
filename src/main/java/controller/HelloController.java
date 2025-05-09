@@ -63,7 +63,7 @@ public class HelloController {
 
     @FXML
     public void quickSortOnAction(ActionEvent actionEvent) {
-        load("QuickSorting.fxml");
+        load("QuickSort.fxml");
     }
 
     @FXML
@@ -85,4 +85,6 @@ public class HelloController {
     public void radixSortOnAction(ActionEvent actionEvent) {
         load("RadixSorting.fxml");
     }
+
+
 }
