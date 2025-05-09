@@ -72,10 +72,7 @@ public class ShellSortController {
 
     }
 
-    @FXML
-    void cleanOnAction(ActionEvent event) {
-
+    public void clearOnAction(ActionEvent actionEvent) {
     }
-
 }
 
