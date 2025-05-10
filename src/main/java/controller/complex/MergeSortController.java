@@ -7,9 +7,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
 import util.FXUtility;
 import util.Utility;
 
@@ -19,15 +16,7 @@ import java.util.Random;
 
 public class MergeSortController {
 
-    @FXML
-    private AnchorPane AP;
-    @FXML
-    private Pane buttonPane;
-    @FXML
-    private Pane mainPain;
-    @FXML
-    private Text txtMessage;
-    @FXML
+      @FXML
     private TextField recursiveCallTextField;
     @FXML
     private TableView<ObservableList<Integer>> tempTV;
