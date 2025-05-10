@@ -53,6 +53,8 @@ public class RadixSortController {
     private int[] originalArray;
     private int[] sortedArray;
     private int[] counterArray;
+    @FXML
+    private Button createButton;
 
     @FXML
     public void createOnAction(ActionEvent actionEvent) {

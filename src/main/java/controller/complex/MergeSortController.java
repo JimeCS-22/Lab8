@@ -52,9 +52,7 @@ public class MergeSortController {
     private static final int LIMIT_LOW_HIGH = 10; // Consistent limit for Low and High display
 
     public void initialize() {
-        configureTableView(noSortedTV, "Unsorted Array");
-        configureTableView(sortedTV, "Sorted Array");
-        configureTableView(tempTV, "Temporary Array");
+
     }
 
     private void configureTableView(TableView<ObservableList<Integer>> tableView, String columnName) {
@@ -108,7 +106,6 @@ public class MergeSortController {
             clearAllTables();
         }
     }
-
 
 
     @FXML
